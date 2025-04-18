@@ -5,6 +5,8 @@ require("dotenv").config();
 const auth = async (req, res, next) => {
   try {
     const token = req.cookies.token; // Get the token from cookies
+    console.log("token---------------",token);
+    
     if (!token) {
       throw new Error("Token is missing.");
     }
