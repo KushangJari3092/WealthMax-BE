@@ -67,9 +67,13 @@ const login = async (req, res) => {
 
         res.cookie("token", token, {
           maxAge: 7 * 24 * 60 * 60 * 1000, // Cookie expires in 7 days
+          secure: true,
+          sameSite: "None",
         });
         res.cookie("user", JSON.stringify(user), {
           maxAge: 7 * 24 * 60 * 60 * 1000, // Cookie expires in 7 days
+          secure: true,
+          sameSite: "None",
         });
 
         return res.status(200).send({

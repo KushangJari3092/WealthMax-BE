@@ -19,9 +19,10 @@ const watchlistDetails = require("./src/webSockets/watchListData.js");
 const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser());
+
 app.use(
   cors({
-    origin: process.env.FE, // Your frontend URL
+    origin:  ['http://localhost:5173', 'https://wealthmax.netlify.app'], // Your frontend URL
     credentials: true,
   })
 );
